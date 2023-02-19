@@ -3,22 +3,28 @@
 // Під час сабміту форми очищуй сховище і поля форми, а також виводь у консоль об'єкт з полями email, message та їхніми поточними значеннями.
 // Зроби так, щоб сховище оновлювалось не частіше, ніж раз на 500 мілісекунд. Для цього додай до проекту і використовуй бібліотеку lodash.throttle.
 import  throttle from "lodash.throttle";
+const inputMail = document.querySelector('input');
+const inputMessage = document.querySelector("textarea")
 
 const LOCALSTORANGE_KEY = 'feedback-form-state';
 const feedbackForm = document.querySelector('.feedback-form');
 
 initForm();
 
-feedbackForm.addEventListener('input', evt => {
-    evt.preventDefault();
-    const formData = new FormData(feedbackForm);
-    formData.forEach((value, name) => console.log(value, name));
-});
+// feedbackForm.addEventListener('input', evt => {
+//     evt.preventDefault();
+  
+// });
 
 feedbackForm.addEventListener('change', throttle(onThottle, 500));
 
 feedbackForm.addEventListener('submit', evt => {
+    evt.preventDefault();
     localStorage.removeItem(LOCALSTORANGE_KEY);
+    const formData = new FormData(feedbackForm);
+    formData.forEach((value, name) => console.log(value, name));
+    inputMail.value = " ";
+    inputMessage.value = " "
 }
 );
 
