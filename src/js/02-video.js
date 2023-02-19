@@ -25,4 +25,4 @@ const saveTime = localStorage.getItem(LOCALPLAYER_KEY);
     player.setCurrentTime(saveTime);
   }
 
-player.on('play', throttle(saveTime, 1000));
+// player.on('play', throttle(saveTime, 1000));
