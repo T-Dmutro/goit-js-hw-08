@@ -26,7 +26,7 @@ function createCardMarkup( element){
     
 // }console.log(createCardMarkup)
 const instance =new SimpleLightbox('.gallery a', { sourceAttr : "href"});
-lightbox.on("show.simplelightbox");
+instance.on("show.simplelightbox");
 function onCardsContainerClick(el){
     // console.log(el.target.parentNode)
     el.preventDefault()
@@ -35,7 +35,7 @@ function onCardsContainerClick(el){
  }
 //  console.log(el.target.dataset.source)
 
-    instance.show();
+    // instance.show();
    
     window.addEventListener("keydown", (el)=>{
     if (el.code === "Escape") {
