@@ -18,7 +18,7 @@ function onPlay(data) {
 }
 
 player.on('timeupdate', throttle(onPlay, 1000));
-console.log(onPlay);
+// console.log(onPlay);
 
 const saveTime = localStorage.getItem(LOCALPLAYER_KEY);
   if(saveTime){
